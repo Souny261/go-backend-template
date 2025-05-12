@@ -1,0 +1,7 @@
+{"level":"info","timestamp":"2025-03-22T14:40:42.034+0700","caller":"api/main.go:10","msg":"Starting application..."}
+{"level":"info","timestamp":"2025-03-22T14:41:46.526+0700","caller":"api/main.go:10","msg":"🌟 Starting application... 🚀"}
+{"level":"info","timestamp":"2025-03-22T14:44:45.982+0700","caller":"api/main.go:10","msg":"🌟 Starting application... 🚀"}
+{"level":"info","timestamp":"2025-03-22T14:55:01.572+0700","caller":"api/main.go:13","msg":"🌟 Starting application... 🚀"}
+{"level":"info","timestamp":"2025-03-22T15:05:59.712+0700","caller":"api/main.go:15","msg":"🌟 Starting application... 🚀"}
+{"level":"info","timestamp":"2025-03-22T15:06:15.686+0700","caller":"api/main.go:15","msg":"🌟 Starting application... 🚀"}
+{"level":"info","timestamp":"2025-03-22T15:13:52.225+0700","caller":"api/main.go:15","msg":"🌟 Starting application... 🚀"}

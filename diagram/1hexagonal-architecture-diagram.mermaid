@@ -1,0 +1,39 @@
+flowchart TD
+    subgraph "External World"
+        HTTP["HTTP Clients"]
+        DB[(PostgreSQL)]
+        CACHE[(Redis)]
+        EXTERNAL[External Services]
+    end
+
+    subgraph "Primary Adapters"
+        HTTP_HANDLERS["HTTP Handlers\n(internal/adapters/primary/http)"]
+    end
+
+    subgraph "Secondary Adapters"
+        POSTGRES_REPO["PostgreSQL Repositories\n(internal/adapters/secondary/postgres)"]
+        REDIS_REPO["Redis Repositories\n(internal/adapters/secondary/redis)"]
+    end
+
+    subgraph "Domain Core"
+        subgraph "Input Ports"
+            USE_CASES["Use Cases Interfaces\n(internal/core/ports/input)"]
+        end
+
+        subgraph "Output Ports"
+            REPO_INTERFACES["Repository Interfaces\n(internal/core/ports/output)"]
+        end
+
+        DOMAIN["Domain Entities\n(internal/core/domain)"]
+        SERVICES["Business Services\n(internal/core/services)"]
+    end
+
+    HTTP --> HTTP_HANDLERS
+    HTTP_HANDLERS --> USE_CASES
+    USE_CASES --> SERVICES
+    SERVICES --> DOMAIN
+    SERVICES --> REPO_INTERFACES
+    REPO_INTERFACES --> POSTGRES_REPO
+    REPO_INTERFACES --> REDIS_REPO
+    POSTGRES_REPO --> DB
+    REDIS_REPO --> CACHE
